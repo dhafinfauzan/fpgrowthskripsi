@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 from mlxtend.frequent_patterns import fpgrowth, association_rules
@@ -34,7 +33,11 @@ if uploaded_file:
     st.dataframe(freq_items)
 
     st.write("Aturan Asosiasi")
-    st.dataframe(rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']])
+    st.write("Jumlah aturan asosiasi yang ditemukan:", len(rules))
+    if rules.empty:
+        st.warning("Tidak ada aturan asosiasi yang ditemukan. Coba turunkan nilai minimum support atau cek data Anda.")
+    else:
+        st.dataframe(rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']])
 
     st.subheader("Analisis Regresi Linear")
 

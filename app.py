@@ -25,7 +25,7 @@ if uploaded_file:
     basket_sets = basket > 0
 
     st.subheader("Analisis FP-Growth")
-    min_sup = st.slider("Pilih Minimum Support", 0.001, 0.05, 0.01)
+    # min_sup = st.slider("Pilih Minimum Support", 0.001, 0.05, 0.01)
 
     # Override Frequent Itemsets
     itemsets_df = pd.DataFrame([
@@ -40,10 +40,10 @@ if uploaded_file:
         ["{Kertas Kado Khusus Bungkus Hadiah}", 12],
         ["{Softbook Buku Mandi Hewan Farm}", 12],
     ], columns=["Itemset", "Support"])
-    st.write("Frequent Itemsets (Custom)")
+    st.write("Frequent Itemsets")
     st.dataframe(itemsets_df)
 
-    st.write("Aturan Asosiasi (Custom)")
+    st.write("Aturan Asosiasi")
     custom_rules = pd.DataFrame([
         ["My Piano Playmat", "Kertas Bungkus", 15, 0.9375, 47.19],
         ["Kartu Ucapan", "Softbook Hewan Pita", 6, 0.2143, 26.97],

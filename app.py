@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
 st.set_page_config(layout="wide")
-st.title("Analisis Market Basket dan Regresi Linear - Custom Output")
+st.title("Analisis Market Basket dan Regresi Linear")
 
 uploaded_file = st.file_uploader("Upload File Excel Transaksi", type=["xlsx"])
 if uploaded_file:
